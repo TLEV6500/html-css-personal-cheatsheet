@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Calibri", sans-serif;
+}
+
+h1.main-title {
+	text-align: center;
+	margin: 2% 0;
+}
+
+h2[class$="-header"] {
+    padding: 0 3%;
+}
+
+div {
+	position: relative;
+	overflow-x: scroll;
+	padding: 0 3%;
+}
+
+div > table {
+	width: 150%;
+}
+
+div[class$="-table"] {
+    margin-bottom: 2%;
+}
+
+table {
+	margin: 0 auto;
+	border: 5px solid grey;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+th {
+	font-size: large;
+	font-weight: bold;
+}
+
+.width-20 {
+	width: 20%;
+}
+
+.width-30 {
+	width: 30%;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+.width-60 {
+	width: 60%;
+}
+
+th,
+td {
+	border: 5px solid grey;
+	padding: 5px 20px;
+	text-align: left;
+}
+
+table tr td {
+	padding: 20px 20px;
+	vertical-align: top;
+	border-bottom-width: 10px;
+}
+
+td a {
+	overflow-wrap: break-word;
+}
+
+.code {
+	font-family: "Space Mono", monospace;
+	font-size: 14px;
+	background: rgb(10, 10, 41);
+	color: cyan;
+	overflow-wrap: break-word;
+	box-decoration-break: clone;
+	line-height: 1.5;
+	letter-spacing: 0.3px;
+}
+
+tr td:first-child {
+	font-weight: bold;
+}
+
+td span {
+	font-family: "Space Mono", monospace;
+	font-size: 12px;
+	background: rgb(237, 237, 255);
+	color: rgb(10, 10, 41);
+	font-weight: bold;
+	padding: 0.05rem 0.3rem 0.15rem;
+	border-radius: 0.2rem;
+	overflow-wrap: break-word;
+	box-decoration-break: clone;
+	line-height: 1.5;
+	letter-spacing: 0.2px;
+}
+
+.centered {
+	text-align: center;
+}
+
+a {
+	color: rgb(64, 64, 149);
+}
+
+.description {
+    margin-bottom: 15px;
+    overflow:hidden;
+}

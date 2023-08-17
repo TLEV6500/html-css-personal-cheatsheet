@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My HTML & CSS Cheat Sheet</title>
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<h1 class="main-title">Tim's HTML & CSS Cheat Sheet</h1>
+
+		<h2 class="css-header">CSS Cheat Sheet</h2>
+		<div class="description css-group">
+			<span><b>Note: </b></span
+			><span
+				>Syntax of CSS properties uses the
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar"
+					>CSS Value Definition Syntax</a
+				>
+				as used by the MDN Web Docs on CSS (with some slight
+				modifications).</span
+			>
+		</div>
+		<div class="css-table">
+			<table>
+				<!-- Headers -->
+				<tr>
+					<th class="width-20">Code</th>
+					<th class="width-30">Description</th>
+					<th class="width-30">Syntax</th>
+					<th class="width-60">Permitted Values</th>
+					<th class="width-30">Default Values</th>
+					<th class="width-30">Requisites</th>
+					<th class="width-50">Extra Notes</th>
+					<th class="width-20">Reference</th>
+				</tr>
+				<!-- Start of Data -->
+				<tr id="data-row-1">
+					<td class="code">align-content</td>
+					<td>
+						"Sets the distribution of space between and around
+						content items along a flexbox's cross-axis or a grid's
+						block axis"
+					</td>
+					<td class="code">
+						align-content: normal |<br />
+						&lt;baseline-position&gt; |<br />
+						&lt;content-distribution&gt; |<br />
+						&lt;overflow-position&gt;? &lt;content-position&gt;;
+					</td>
+					<td class="code">
+						&lt;baseline-position&gt; = [first | last]? &&
+						baseline<br />
+						&lt;content-distribution&gt; = space-between |
+						space-around | space-evenly | stretch<br />
+						&lt;overflow-position&gt; = unsafe | safe<br />
+						&lt;content-position&gt; = center | start | end |
+						flex-start | flex-end
+					</td>
+					<td class="code">normal</td>
+					<td>Element must be a multi-line flex container</td>
+					<td>
+						"Baseline" is the imaginary line on which characters in
+						a single line rest; “flexbox cross-axis” is the
+						secondary axis of a flex container perpendicular to its
+						<span>flex-direction</span>; “grid block axis” is the
+						secondary axis of a grid system perpendicular to the
+						inline axis Commonly confused with
+						<span>align-items</span> & <span>justify-content</span>;
+						Short hand for <span>align-content</span> &
+						<span>justify-content</span> is
+						<span>place-content</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/align-content</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-2">
+					<td class="code">background-image</td>
+					<td>
+						sets the background to be an image/gradient or layers of
+						images/gradient, the first layer being the topmost
+						layer; By default, background images are drawn below the
+						element's borders and above its background color;
+					</td>
+					<td class="code">background-image: &lt;bg-image&gt;#;</td>
+					<td class="code">
+						&lt;bg-image&gt; = url(&lt;string&gt;) |
+						src(&lt;string&gt;) | &lt;gradient&gt; | none
+					</td>
+					<td class="code">none</td>
+					<td>Element must be a multi-line flex container</td>
+					<td>
+						Applies to all HTML elements; Also applies to
+						<span>::first-line</span> & <span>::first-letter</span>;
+						<span>background-color</span> will act as fallback;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/background-image</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-3">
+					<td class="code">border</td>
+					<td>
+						shorthand CSS property for styling the element's border
+						width, style, and color for all sides;
+					</td>
+					<td class="code">
+						border: &lt;line-width&gt; || &lt;line-style&gt; ||
+						&lt;color&gt;;
+					</td>
+					<td class="code">
+						&lt;line-width&gt; = &lt;length [0,∞]&gt; | thin |
+						medium | thick &lt;line-style&gt; = none | hidden |
+						dotted | dashed | solid | double | groove | ridge |
+						inset | outset &lt;color&gt;
+					</td>
+					<td class="code">
+						&lt;line-width&gt; = medium<br />&lt;line-style&gt; =
+						none &lt;color&gt; = currentcolor
+					</td>
+					<td>Element must be a multi-line flex container</td>
+					<td>
+						Applies to all HTML elements; Also applies to
+						<span>::first-letter</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/border</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-4">
+					<td class="code">clear</td>
+					<td>
+						sets the element to move to a new line below the
+						indicated floating element(s) that precedes it
+					</td>
+					<td class="code">clear: &lt;value&gt;;</td>
+					<td class="code">
+						left | right | both | none | top | bottom | inline-start
+						| inline-end | block-start | block-end
+					</td>
+					<td class="code">none</td>
+					<td>
+						<span>float</span> is applied on a sibling element; the
+						applied element must be block-level;
+					</td>
+					<td>&nbsp;</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear#formal_syntax"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/clear#formal_syntax</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-5">
+					<td class="code">height</td>
+					<td>
+						specifies a height constraint for the element; by
+						default, it manipulates the content box height;
+					</td>
+					<td class="code">height: &lt;value&gt;;</td>
+					<td class="code">
+						&lt;value&gt; = auto | &lt;length-percentage [0,∞]&gt; |
+						min-content | max-content |
+						fit-content(&lt;length-percentage [0,∞]&gt;)
+						&lt;length-percentage&gt; = &lt;length&gt; |
+						&lt;percentage&gt; | clamp()
+					</td>
+					<td class="code">&nbsp;</td>
+					<td>
+						element must not be a “non-replaced” inline element,
+						table column, or column group;
+					</td>
+					<td>
+						<span>min-height</span> & <span>max-height</span> will
+						override <span>height</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/height"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/height</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-6">
+					<td class="code">width</td>
+					<td>
+						specifies a width constraint for the element; by
+						default, it manipulates the content box width;
+					</td>
+					<td class="code">width: &lt;value&gt;;</td>
+					<td class="code">
+						&lt;value&gt; = auto | &lt;length-percentage [0,∞]&gt; |
+						min-content | max-content |
+						fit-content(&lt;length-percentage [0,∞]&gt;)
+						&lt;length-percentage&gt; = &lt;length&gt; |
+						&lt;percentage&gt; | clamp()
+					</td>
+					<td class="code">&nbsp;</td>
+					<td>
+						element must not be a “non-replaced” inline element,
+						table column, or column group;
+					</td>
+					<td>
+						<span>min-width</span> & <span>max-width</span> will
+						override <span>width</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/width</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-7">
+					<td class="code">margin</td>
+					<td>
+						shorthand CSS property for specifying the outside space
+						surrounding the element’s border box container; it is
+						important to note that vertical margins collapse in
+						size; multiple values follow a clock-wise direction,
+						starting from the top side, as appropriate
+					</td>
+					<td class="code">margin: &lt;margin-side&gt;{1,4}</td>
+					<td class="code">
+						&lt;margin-side&gt; = &lt;length&gt; |
+						&lt;percentage&gt; | auto &lt;margin-side&gt;{1} =
+						&lt;margin-top&gt; && &lt;margin-right&gt; &&
+						&lt;margin-bottom&gt; && &lt;margin-left&gt;
+						&lt;margin-side&gt;{2} = [&lt;margin-top&gt; &&
+						&lt;margin-bottom&gt;] [&lt;margin-right&gt; &&
+						&lt;margin-left&gt;] &lt;margin-side&gt;{3} =
+						&lt;margin-top&gt; [&lt;margin-right&gt; &&
+						&lt;margin-left&gt;] &lt;margin-bottom&gt;
+						&lt;margin-side&gt;{4} = &lt;margin-top&gt;
+						&lt;margin-right&gt; &lt;margin-bottom&gt;
+						&lt;margin-left&gt;
+					</td>
+					<td class="code">0</td>
+					<td>
+						element must not be of table <span>display</span> type
+						that is not <span>table</span>,
+						<span>inline-table</span>, <span>table-caption</span>
+					</td>
+					<td>
+						<span>margin</span> is the shorthand for the constituent
+						properties of <span>margin-top</span>,
+						<span>margin-right</span>, <span>margin-bottom</span>,
+						<span>margin-left</span>; Also applies to
+						<span>::first-letter</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/margin</a
+						>
+					</td>
+				</tr>
+				<tr id="data-row-8">
+					<td class="code">padding</td>
+					<td>
+						shorthand property for specifying space surrounding the
+						content box within the border box; multiple values
+						follow a clock-wise direction, starting from the top
+						side, as appropriate
+					</td>
+					<td class="code">padding: &lt;padding-side&gt;{1,4}</td>
+					<td class="code">
+						&lt;padding-side&gt; = &lt;length&gt; |
+						&lt;percentage&gt; | auto &lt;padding-side&gt;{1} =
+						&lt;padding-top&gt; && &lt;padding-right&gt; &&
+						&lt;padding-bottom&gt; && &lt;padding-left&gt;
+						&lt;padding-side&gt;{2} = [&lt;padding-top&gt; &&
+						&lt;padding-bottom&gt;] [&lt;padding-right&gt; &&
+						&lt;padding-left&gt;] &lt;padding-side&gt;{3} =
+						&lt;padding-top&gt; [&lt;padding-right&gt; &&
+						&lt;padding-left&gt;] &lt;padding-bottom&gt;
+						&lt;padding-side&gt;{4} = &lt;padding-top&gt;
+						&lt;padding-right&gt; &lt;padding-bottom&gt;
+						&lt;padding-left&gt;
+					</td>
+					<td class="code">0</td>
+					<td>
+						element must not be of table <span>display</span> type
+						that is not <span>table</span>,
+						<span>inline-table</span>, <span>table-caption</span>
+					</td>
+					<td>
+						<span>padding</span> is the shorthand for the
+						constituent properties of <span>padding-top</span>,
+						<span>padding-right</span>, <span>padding-bottom</span>,
+						<span>padding-left</span>; Also applies to
+						<span>::first-letter</span>;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
+							>https://developer.mozilla.org/en-US/docs/Web/CSS/padding</a
+						>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<h2 class="html-header">HTML Cheat Sheet</h2>
+		<div class="description html-group">
+			<span><b>Note: </b></span
+			><span
+				>Syntax of HTML properties borrows from the
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar"
+					>CSS Value Definition Syntax</a
+				>
+				as used by the MDN Web Docs on CSS (with some slight
+				modifications).</span
+			>
+		</div>
+		<div class="html-table">
+			<table>
+				<tr>
+					<th class="width-30">Code</th>
+					<th class="width-30">Description</th>
+					<th class="width-60">Permitted Attributes</th>
+					<th class="width-50">Permitted Content</th>
+					<th class="width-20">Permitted Parents</th>
+					<th class="width-50">Extra Notes</th>
+					<th class="width-20">Reference</th>
+				</tr>
+				<!-- Start of Data -->
+				<tr id="data-row-1">
+					<td class="code">&lt;html&gt;...&lt;/html&gt;</td>
+					<td>
+						The top-level element within which all other HTML
+						elements are contained
+					</td>
+					<td class="code">
+						&lt;global_attributes&gt;? || xmlns? || lang?
+					</td>
+					<td class=""><span>&lt;head&gt; &lt;body&gt;</span></td>
+					<td>N/A</td>
+					<td>
+						The starting tag may be omitted if the first content
+						inside the element is not a comment; likewise, the
+						ending tag may be omitted if the opening tag is not
+						immediately followed by a comment;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html"
+							>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<td class="code">&lt;head&gt;...&lt;/head&gt;</td>
+					<td>contains the metadata about the html document</td>
+					<td class="code">&lt;global attributes&gt;?</td>
+					<td>
+						If document is embedded:
+						<span>
+							[&lt;title&gt; || &lt;base&gt; || &lt;link&gt; ||
+							&lt;style&gt; || &lt;meta&gt; || &lt;script&gt; ||
+							&lt;noscript&gt; || &lt;template&gt;]? </span
+						><br /><br />
+						If document is standalone:
+						<span>
+							&lt;title&gt;! || &lt;base&gt; || &lt;link&gt; ||
+							&lt;style&gt; || &lt;meta&gt; || &lt;script&gt; ||
+							&lt;noscript&gt; || &lt;template&gt;</span
+						>
+					</td>
+
+					<td><span>&lt;html&gt;</span></td>
+					<td>
+						the contents of the <span>&lt;head&gt;</span> element
+						are machine readable contents that are not visible to
+						humans when the html page is rendered; the starting tag
+						can only be omitted if the first content of the head
+						element is an html element, and the end tag may only be
+						omitted if the first content after the start tag is not
+						a space character or a comment
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"
+							>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<td class="code">&lt;body&gt;...&lt;/body&gt;</td>
+					<td>
+						Contains all of the content of an HTML document made to
+						be presented to the human user;
+					</td>
+					<td class="code">
+						[&lt;global attributes&gt; || onafterprint ||
+						onbeforeprint || onbeforeunload || onblur || onerror ||
+						onfocus || onhashchange || onlanguagechange || onload ||
+						onmessage || onoffline || ononline || onpopstate ||
+						onredo || onresize || onstorage || onundo || onunload]?
+					</td>
+					<td>
+						flow content only (the collection of html elements that
+						can go inside the body element)
+					</td>
+					<td><span>&lt;html&gt;</span></td>
+					<td>
+						There can only be one <span>&lt;body&gt;</span> element
+						in an HTML document; It must be the second child element
+						of the <span>&lt;html&gt;</span> element;
+					</td>
+					<td>
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"
+							>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body</a
+						>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
